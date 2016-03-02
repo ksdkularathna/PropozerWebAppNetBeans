@@ -51,7 +51,7 @@ public class login extends HttpServlet {
         if (username != null && pwd != null) {
             Query q1 = hsess.session.createQuery("from Userlogin where userName='" + username + "'");
             Userlogin user = (Userlogin) q1.uniqueResult();
-
+            //login begins
             if (user != null) {
                 if (pwd.equals(user.getPassword())) {
                     Query q2 = hsess.session.createQuery("from User where userlogin='" + user.getLoginId() + "'");
