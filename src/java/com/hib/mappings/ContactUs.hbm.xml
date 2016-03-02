@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 30, 2015 2:13:03 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.hib.mappings.ContactUs" table="contact_us" catalog="propozerdb">
+        <id name="idcontactUs" type="java.lang.Integer">
+            <column name="idcontact_us" />
+            <generator class="identity" />
+        </id>
+        <property name="subName" type="string">
+            <column name="sub_name" length="45" />
+        </property>
+        <property name="subEmail" type="string">
+            <column name="sub_email" length="45" />
+        </property>
+        <property name="topic" type="string">
+            <column name="topic" length="45" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

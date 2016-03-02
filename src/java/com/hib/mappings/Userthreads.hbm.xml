@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 30, 2015 2:13:03 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.hib.mappings.Userthreads" table="userthreads" catalog="propozerdb">
+        <id name="iduserThreads" type="java.lang.Integer">
+            <column name="iduserThreads" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="userByUser2" class="com.hib.mappings.User" fetch="select">
+            <column name="user2" not-null="true" />
+        </many-to-one>
+        <many-to-one name="userByUser1" class="com.hib.mappings.User" fetch="select">
+            <column name="user1" not-null="true" />
+        </many-to-one>
+        <property name="description" type="string">
+            <column name="Description" length="100" />
+        </property>
+        <set name="chatmessageses" table="chatmessages" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="userThreads_iduserThreads" not-null="true" />
+            </key>
+            <one-to-many class="com.hib.mappings.Chatmessages" />
+        </set>
+    </class>
+</hibernate-mapping>

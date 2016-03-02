@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 30, 2015 2:13:03 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.hib.mappings.User" table="user" catalog="propozerdb">
+        <id name="iduser" type="java.lang.Integer">
+            <column name="iduser" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="usertypes" class="com.hib.mappings.Usertypes" fetch="select">
+            <column name="userTypes_type_id" />
+        </many-to-one>
+        <many-to-one name="userlogin" class="com.hib.mappings.Userlogin" fetch="select">
+            <column name="userLogin_login_id" />
+        </many-to-one>
+        <property name="fname" type="string">
+            <column name="fname" length="80" />
+        </property>
+        <property name="lname" type="string">
+            <column name="lname" length="80" />
+        </property>
+        <property name="gender" type="string">
+            <column name="gender" length="20" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="age" />
+        </property>
+        <property name="maritalStatus" type="string">
+            <column name="marital_status" length="45" />
+        </property>
+        <property name="mothertongue" type="string">
+            <column name="mothertongue" length="45" />
+        </property>
+        <property name="caste" type="string">
+            <column name="caste" length="45" />
+        </property>
+        <property name="religion" type="string">
+            <column name="religion" length="45" />
+        </property>
+        <property name="height" type="big_decimal">
+            <column name="height" precision="5" scale="1" />
+        </property>
+        <property name="city" type="string">
+            <column name="city" length="45" />
+        </property>
+        <property name="country" type="string">
+            <column name="country" length="45" />
+        </property>
+        <property name="educationLevel" type="string">
+            <column name="education_level" length="45" />
+        </property>
+        <property name="profession" type="string">
+            <column name="profession" length="45" />
+        </property>
+        <property name="workplace" type="string">
+            <column name="workplace" length="100" />
+        </property>
+        <property name="income" type="string">
+            <column name="income" length="80" />
+        </property>
+        <property name="yourself" type="string">
+            <column name="yourself" length="500" />
+        </property>
+        <property name="background" type="string">
+            <column name="background" length="500" />
+        </property>
+        <property name="educationStatus" type="string">
+            <column name="education_status" length="500" />
+        </property>
+        <property name="wealth" type="string">
+            <column name="wealth" length="500" />
+        </property>
+        <property name="expectations" type="string">
+            <column name="expectations" length="500" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="80" />
+        </property>
+        <property name="fbEmail" type="string">
+            <column name="fb_email" length="80" />
+        </property>
+        <property name="propicture" type="binary">
+            <column name="propicture" />
+        </property>
+        <property name="activateStatus" type="java.lang.Boolean">
+            <column name="activate_status" />
+        </property>
+        <property name="fbProfile" type="string">
+            <column name="fb_profile" length="80" />
+        </property>
+        <property name="userNameId" type="string">
+            <column name="user_name_id" length="80" />
+        </property>
+        <property name="date" type="string">
+            <column name="date" length="80" />
+        </property>
+        <set name="chatmessagesesForMsgTo" table="chatmessages" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="msg_to" not-null="true" />
+            </key>
+            <one-to-many class="com.hib.mappings.Chatmessages" />
+        </set>
+        <set name="userrequestses" table="userrequests" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_iduser" />
+            </key>
+            <one-to-many class="com.hib.mappings.Userrequests" />
+        </set>
+        <set name="usernotifications" table="usernotification" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_iduser" not-null="true" />
+            </key>
+            <one-to-many class="com.hib.mappings.Usernotification" />
+        </set>
+        <set name="usersessions" table="usersession" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_iduser" not-null="true" />
+            </key>
+            <one-to-many class="com.hib.mappings.Usersession" />
+        </set>
+        <set name="userthreadsesForUser1" table="userthreads" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user1" not-null="true" />
+            </key>
+            <one-to-many class="com.hib.mappings.Userthreads" />
+        </set>
+        <set name="chatmessagesesForMsgFrom" table="chatmessages" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="msg_from" not-null="true" />
+            </key>
+            <one-to-many class="com.hib.mappings.Chatmessages" />
+        </set>
+        <set name="userthreadsesForUser2" table="userthreads" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user2" not-null="true" />
+            </key>
+            <one-to-many class="com.hib.mappings.Userthreads" />
+        </set>
+        <set name="usergrantprivilegeses" table="usergrantprivileges" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="user_iduser" not-null="true" />
+            </key>
+            <one-to-many class="com.hib.mappings.Usergrantprivileges" />
+        </set>
+    </class>
+</hibernate-mapping>

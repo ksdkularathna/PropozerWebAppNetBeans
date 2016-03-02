@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/propozerdb</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">123</property>
+        <property name="hibernate.connection.characterEncoding">utf8</property>
+
+        <mapping resource="com/hib/mappings/User.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Usertypes.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Sucessstory.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Fakeprofile.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Help.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Userthreads.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Usergrantprivileges.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Userlogin.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Usersession.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Chatmessages.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Usernotification.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Feedback.hbm.xml"/>
+        <mapping resource="com/hib/mappings/ContactUs.hbm.xml"/>
+        <mapping resource="com/hib/mappings/Userrequests.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

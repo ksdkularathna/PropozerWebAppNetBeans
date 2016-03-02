@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 30, 2015 2:13:03 PM by Hibernate Tools 3.6.0 -->
+<hibernate-mapping>
+    <class name="com.hib.mappings.Usergrantprivileges" table="usergrantprivileges" catalog="propozerdb">
+        <id name="iduserGrantPrivileges" type="java.lang.Integer">
+            <column name="`iduserGrant Privileges`" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="user" class="com.hib.mappings.User" fetch="select">
+            <column name="user_iduser" not-null="true" />
+        </many-to-one>
+        <property name="reqUserId" type="string">
+            <column name="req_user_id" length="45" not-null="true" />
+        </property>
+        <property name="proPicture" type="boolean">
+            <column name="pro_picture" not-null="true" />
+        </property>
+        <property name="username" type="boolean">
+            <column name="username" not-null="true" />
+        </property>
+        <property name="workplace" type="boolean">
+            <column name="workplace" not-null="true" />
+        </property>
+        <property name="email" type="boolean">
+            <column name="email" not-null="true" />
+        </property>
+        <property name="fbProfile" type="boolean">
+            <column name="fb_profile" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,36 @@
+
+.custom-Modals {
+  top:21%;
+
+}
+
+.custom-Modals .modal-title {
+  color: #e2335b;
+  text-align: center;
+
+   margin-top: 10px;
+}
+
+.custom-Modals .modal-dialog {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5); 
+
+}
+
+.custom-Modals .modal-content {
+font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+font-size: small;
+border-radius: 10px;
+
+}
+
+.custom-Modals .modal-footer {border: none !important; }
+
+.custom-Modals .modal-header {
+    border: none !important;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #575757;
+    font-size: 20px;
+    font-weight: 500;
+}
